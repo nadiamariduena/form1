@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Why does property specified under * selector work for some but no others?
+For some properties like color you would get the illusion of * applying to all elements including pseudos because they are properties that a child can inherit from its parent.
+
+box-sizing on the other hand is not an inherited property and hence must be explicitly mentioned on the pseudo elements also. */
+
+:root {
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: red;
+}
+
+#page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------ */
+#box-parent {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/Frieze-4-1000x667.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-container-box {
+  width: 40%;
+  height: 60%;
+  background-color: #ff0f;
+  padding: 50px;
+  transform: rotate(-5deg);
+}
+
+/* ------CHILD1----------- */
+
+.child1 {
+  width: 100%;
+  height: 20%;
+  background-color: #ff0f;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.child img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------CHILD1----------- */
+.child2 {
+  width: 100%;
+  height: 60%;
+  background-color: #ff0f;
+}
+
+.form-row {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.form-row h1 {
+  color: #000;
+  margin-bottom: 15px;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  word-spacing: 2px;
+}
+.form-row input[type="text"] {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d6d9dc;
+
+  width: 60%;
+  padding: 7px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+input:focus {
+  outline: none;
+  border: 2px blue;
+  box-shadow: 1px 1px 1px #666;
+}
+
+.form-row p:nth-child(odd) {
+  color: #000;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.form-row p:nth-child(even) {
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.form-row a {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+/* ----------------------- */
+.child3 {
+  width: 100%;
+  height: 20%;
+  background-color: #ff0f;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  margin: 0px 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #666;
+}
